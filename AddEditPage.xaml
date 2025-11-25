@@ -1,0 +1,14 @@
+﻿<Page x:Class="Багманов41.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Багманов41"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage" FontFamily="Comic Sans MS">
+
+    <Grid>
+        <TextBlock Text="Hello" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></TextBlock>
+    </Grid>
+</Page>
