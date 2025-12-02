@@ -9,7 +9,53 @@
       Title="Список товаров" FontFamily="Comic Sans MS">
 
     <Grid>
-        <ListView Name="ProductListView" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Text="Введите название для поиска" TextAlignment="Right"
+                           Width="300" FontSize="20"></TextBlock>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"
+                         Width="300" FontSize="15"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text=" Выбери название для поиска " TextAlignment="Right"
+                           Width="300" FontSize="20"></TextBlock>
+                <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged"
+                          FontSize="15" Width="200">
+                    <TextBlock>Все</TextBlock>
+                    <TextBlock> от 0 до 9,99%</TextBlock>
+                    <TextBlock> от 10 до 14,99%</TextBlock>
+                    <TextBlock> от 15% и более</TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </WrapPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5">
+            <RadioButton Content="По возрастанию стоимости" GroupName = "Sort"
+                         Width="300" FontSize="20" Checked="RButtonUp_Checked_1"
+                         Name="RButtonUp"></RadioButton>
+            <RadioButton Content="По убыванию стоимости" GroupName="Sort"
+                         Width="300" FontSize="20" Checked="RButtonDown_Checked_1"
+                         Name="RButtonDown"></RadioButton>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="LeftDirButton" Content="&lt;" Width="20" Height="20"
+                       Click="LeftDirButton_Click"></Button>
+            <ListBox FontSize="20" Name="PageListBox">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </StackPanel>
+        <ListView Name="ProductListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

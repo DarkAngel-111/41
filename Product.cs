@@ -34,7 +34,7 @@ namespace Багманов41
         public string ProductPhoto { get; set; }
         public string ProductStatus { get; set; }
 
-        public string ProductPhotoPath
+        public string ProductPhotoPath 
         {
             get
             {
