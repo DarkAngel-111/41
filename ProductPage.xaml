@@ -15,6 +15,15 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="2" Name="ItemCountTextBlock" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="16" Margin="5"/>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Orientation="Vertical" Margin="10" Grid.ColumnSpan="2">
+            <TextBlock Text="Вы авторизованы как:" FontSize="14" HorizontalAlignment="Left"/>
+            <TextBlock Name="FIOTB" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <TextBlock Text="Роль:" FontSize="14" HorizontalAlignment="Left"/>
+            <TextBlock Name="RoleTB" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left"/>
+        </StackPanel>
+        
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <StackPanel Margin="10" Orientation="Horizontal">
                 <TextBlock Text="Введите название для поиска" TextAlignment="Right"

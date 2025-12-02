@@ -20,6 +20,34 @@ namespace Багманов41
     /// </summary>
     public partial class ProductPage : Page
     {
+
+        public ProductPage(User user)
+        {
+            InitializeComponent();
+
+            // FIOTB - TextBlock для отображения ФИО
+            FIOTB.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+
+            // RoleTB - TextBlock для отображения роли
+            switch (user.UserRole)
+            {
+                case 1:
+                    RoleTB.Text = "Клиент";
+                    break;
+                case 2:
+                    RoleTB.Text = "Менеджер";
+                    break;
+                case 3:
+                    RoleTB.Text = "Администратор";
+                    break;
+            }
+
+            var currentProducts = Bagmanov41Entities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currentProducts;
+
+            ComboType.SelectedIndex = 0;
+            UpdateProductes();
+        }
         public ProductPage()
         {
             InitializeComponent();
