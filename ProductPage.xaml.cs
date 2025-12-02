@@ -32,6 +32,12 @@ namespace Багманов41
             UpdateProductes();
         }
 
+        private void UpdateItemCount()
+        {
+            var total = Bagmanov41Entities.GetContext().Product.Count();
+            var displayed = ProductListView.Items.Count;
+            ItemCountTextBlock.Text = $"кол-во {displayed} из {total}";
+        }
         private void UpdateProductes()
         {
             var currentServices = Bagmanov41Entities.GetContext().Product.ToList();
@@ -68,7 +74,7 @@ namespace Багманов41
             {
                 ProductListView.ItemsSource = currentServices.OrderBy(p => p.ProductCost).ToList();
             }
-
+            UpdateItemCount();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
