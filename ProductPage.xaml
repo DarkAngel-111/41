@@ -46,13 +46,18 @@
         </WrapPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5">
             <RadioButton Content="По возрастанию стоимости" GroupName = "Sort"
-                         Width="300" FontSize="20" Checked="RButtonUp_Checked_1"
+                         Width="300" FontSize="20" Checked="RButtonUp_Checked"
                          Name="RButtonUp"></RadioButton>
             <RadioButton Content="По убыванию стоимости" GroupName="Sort"
-                         Width="300" FontSize="20" Checked="RButtonDown_Checked_1"
+                         Width="300" FontSize="20" Checked="RButtonDown_Checked"
                          Name="RButtonDown"></RadioButton>
         </StackPanel>
         <ListView Name="ProductListView" Grid.Row="2">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить к заказу" Click="AddToOrderMenuItem_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -91,5 +96,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Name="ViewOrderBtn" Content="Просмотреть заказ" Grid.Row="3" HorizontalAlignment="Right"
+        Click="ViewOrderBtn_Click"  Visibility="Collapsed" FontSize="15"></Button>
     </Grid>
 </Page>
